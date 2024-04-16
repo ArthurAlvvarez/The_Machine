@@ -14,12 +14,13 @@ public class operandStack {
 			return true;
 	}
 
-	public void push(int num) {
+	public boolean push(int num) {
 		if (this.Elements < this.MAX_STACK) {
 			this.Stack[Elements] = num;
 			this.Elements++;
+			return true;
 		}else
-			System.out.println("Has introducido el maximo de instrucciones posibles");
+			return false;
 	}
 
 	public int pop() {
@@ -28,14 +29,14 @@ public class operandStack {
 			this.Elements--;
 			return temp;
 		}else
-			return (Integer) null;
+			return -1;
 	}
 	
 	public int getCima() {
 		if(isEmpty() == false) {
 			return this.Stack[Elements];
 		}else
-			return (Integer) null;
+			return -1;
 	}
 	
 	public String toString() {
@@ -46,6 +47,6 @@ public class operandStack {
 			}
 			return texto;
 		}else
-			return "No has introducido ninguna instruccion";
+			return null;
 	}
 }
