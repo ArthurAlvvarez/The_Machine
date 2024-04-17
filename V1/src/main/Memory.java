@@ -2,24 +2,27 @@ package main;
 
 public class Memory {
 	private int Max_memory;
-	private int size = 0;
+	private int size = 5;
 	private Integer[] memory = new Integer[size];
-	private boolean empty = true;
+	private boolean empty;
+	
+	public Memory() {
+		this.empty = true;
+	}
 	
 	private void resize (int pos) {
 		if(pos >= size) {
 			this.empty = false;
 			Integer[] array2 = new Integer[pos*2];
 			array2 = this.memory;
-		}else {
-			System.out.println("No se permite posicion negativa");
+			this.memory = array2;
 		}
 	}
 	
 	public boolean write(int pos, int x) {
 		if(pos >= 0) {
 			this.resize(pos);
-			memory[pos] = x;
+			this.memory[pos] = x;
 			return true;
 		}else {
 			return false;
@@ -27,6 +30,10 @@ public class Memory {
 	}
 	
 	public Integer read(int pos) {
-		
+		if (this.memory[pos] == null) {
+			return -1;
+		}else {
+			return this.memory[pos];
+		}
 	}
 }
