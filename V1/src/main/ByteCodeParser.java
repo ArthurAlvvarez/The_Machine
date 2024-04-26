@@ -6,7 +6,7 @@ public class ByteCodeParser {
 		String [] a = s.split(" ");
 		switch (a.length) {
 		case 1:
-			if (condition) {
+			if () {
 				
 			}
 			break;
