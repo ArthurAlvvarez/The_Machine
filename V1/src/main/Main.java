@@ -4,8 +4,7 @@ public class Main {
 
 	public static void main(String[] args) {
 		Memory memoria = new Memory();
-		//método resize no funciona	
-		
+		memoria.write(10, 2);
 	}
 
 }

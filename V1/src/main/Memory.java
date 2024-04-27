@@ -14,7 +14,9 @@ public class Memory {
 		if(pos >= size) {
 			this.empty = false;
 			Integer[] array2 = new Integer[pos*2];
-			array2 = this.memory;
+			for (int i = 0; i < this.memory.length; i++) {
+	            array2[i] = this.memory[i];
+	        }
 			this.memory = array2;
 		}
 	}
