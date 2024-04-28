@@ -38,4 +38,19 @@ public class Memory {
 			return this.memory[pos];
 		}
 	}
+	
+	public String toString() {
+			String texto = "";
+			if (empty == false) {
+				for(int i = 0; i < memory.length; i++) {
+					if (this.memory[i] == null) {
+						
+					}else {
+						texto += this.memory[i] + " ";
+					}
+				}
+				return texto;
+			}else
+				return null;
+	}
 }

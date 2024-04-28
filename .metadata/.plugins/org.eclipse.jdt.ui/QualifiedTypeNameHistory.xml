@@ -6,7 +6,8 @@
     <fullyQualifiedTypeName name="java.lang.Integer"/>
     <fullyQualifiedTypeName name="main.Memory"/>
     <fullyQualifiedTypeName name="main.Enum_Bytecode"/>
-    <fullyQualifiedTypeName name="main.ENUM_BYTECODE"/>
-    <fullyQualifiedTypeName name="main.ByteCode"/>
     <fullyQualifiedTypeName name="java.lang.String"/>
+    <fullyQualifiedTypeName name="main.ByteCodeParser"/>
+    <fullyQualifiedTypeName name="main.ByteCode"/>
+    <fullyQualifiedTypeName name="main.ENUM_BYTECODE"/>
 </qualifiedTypeNameHistroy>

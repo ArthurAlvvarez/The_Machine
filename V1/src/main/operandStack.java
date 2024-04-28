@@ -34,7 +34,7 @@ public class operandStack {
 	
 	public int getCima() {
 		if(isEmpty() == false) {
-			return this.Stack[Elements];
+			return this.Stack[Elements -1];
 		}else
 			return -1;
 	}
@@ -43,7 +43,7 @@ public class operandStack {
 		String texto = "";
 		if (isEmpty() == false) {
 			for(int i = 0; i < Elements; i++) {
-				texto += this.Stack[Elements] + ", ";
+				texto += this.Stack[i] + " ";
 			}
 			return texto;
 		}else
