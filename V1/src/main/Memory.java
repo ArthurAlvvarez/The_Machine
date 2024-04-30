@@ -14,7 +14,9 @@ public class Memory {
 		if(pos >= size) {
 			this.empty = false;
 			Integer[] array2 = new Integer[pos*2];
-			array2 = this.memory;
+			for (int i = 0; i < this.memory.length; i++) {
+	            array2[i] = this.memory[i];
+	        }
 			this.memory = array2;
 		}
 	}
@@ -35,5 +37,20 @@ public class Memory {
 		}else {
 			return this.memory[pos];
 		}
+	}
+	
+	public String toString() {
+			String texto = "";
+			if (empty == false) {
+				for(int i = 0; i < memory.length; i++) {
+					if (this.memory[i] == null) {
+						
+					}else {
+						texto += this.memory[i] + " ";
+					}
+				}
+				return texto;
+			}else
+				return null;
 	}
 }
