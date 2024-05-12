@@ -7,5 +7,5 @@ public class ByteCode {
 	public ByteCode(ENUM_BYTECODE bc) {
 		this.name = bc;
 	}
-
+	
 }
