@@ -49,4 +49,9 @@ public class operandStack {
 		}else
 			return null;
 	}
+	
+	public void erase() {
+		this.Stack = new int[MAX_STACK];
+		this.Elements = 0;
+	}
 }

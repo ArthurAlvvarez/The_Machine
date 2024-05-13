@@ -21,7 +21,7 @@ public class Memory {
 		}
 	}
 	
-	public boolean write(int pos, int x) {
+	public boolean write(int pos, Integer x) {
 		if(pos >= 0) {
 			this.resize(pos);
 			this.memory[pos] = x;
@@ -52,5 +52,9 @@ public class Memory {
 				return texto;
 			}else
 				return null;
+	}
+	
+	public void erase() {
+		this.memory = new Integer[size];
 	}
 }

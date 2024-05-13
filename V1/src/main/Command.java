@@ -9,4 +9,14 @@ public class Command {
 	public Command(ENUM_COMMAND c) {
 		this.command = c;
 	}
+	
+	public Command(ENUM_COMMAND c, ByteCode bc) {
+		this.command = c;
+		this.instruction = bc;
+	}
+	
+	public Command(ENUM_COMMAND c, int i) {
+		this.command = c;
+		this.replace = i;
+	}
 }

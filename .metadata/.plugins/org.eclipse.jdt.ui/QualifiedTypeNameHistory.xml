@@ -2,16 +2,17 @@
 <qualifiedTypeNameHistroy>
     <fullyQualifiedTypeName name="javax.management.loading.PrivateClassLoader"/>
     <fullyQualifiedTypeName name="java.util.Stack"/>
-    <fullyQualifiedTypeName name="java.lang.Integer"/>
     <fullyQualifiedTypeName name="main.Enum_Bytecode"/>
     <fullyQualifiedTypeName name="main.ByteCodeParser"/>
-    <fullyQualifiedTypeName name="main.operandStack"/>
     <fullyQualifiedTypeName name="main.Memory"/>
     <fullyQualifiedTypeName name="main.Command"/>
     <fullyQualifiedTypeName name="main.ENUM_COMMAND"/>
     <fullyQualifiedTypeName name="java.lang.String"/>
     <fullyQualifiedTypeName name="main.ByteCodeProgram"/>
-    <fullyQualifiedTypeName name="main.CPU"/>
     <fullyQualifiedTypeName name="main.ByteCode"/>
+    <fullyQualifiedTypeName name="java.lang.Integer"/>
+    <fullyQualifiedTypeName name="int"/>
     <fullyQualifiedTypeName name="main.ENUM_BYTECODE"/>
+    <fullyQualifiedTypeName name="main.operandStack"/>
+    <fullyQualifiedTypeName name="main.CPU"/>
 </qualifiedTypeNameHistroy>
