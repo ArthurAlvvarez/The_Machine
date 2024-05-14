@@ -1,5 +1,6 @@
 package main;
 
+import java.io.ObjectInputStream.GetField;
 import java.util.Iterator;
 
 public class operandStack {
@@ -24,7 +25,7 @@ public class operandStack {
 	}
 
 	public int pop() {
-		int temp = this.Stack[Elements];
+		int temp = this.Stack[Elements -1];
 		if(isEmpty() == false) {
 			this.Elements--;
 			return temp;
@@ -47,11 +48,16 @@ public class operandStack {
 			}
 			return texto;
 		}else
-			return null;
+			return "vacia";
 	}
 	
 	public void erase() {
 		this.Stack = new int[MAX_STACK];
 		this.Elements = 0;
 	}
+	
+	public int getElemts() {
+		return this.Elements;
+	}
+
 }

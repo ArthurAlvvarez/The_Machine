@@ -51,7 +51,7 @@ public class Memory {
 				}
 				return texto;
 			}else
-				return null;
+				return "vacia";
 	}
 	
 	public void erase() {

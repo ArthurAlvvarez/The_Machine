@@ -14,55 +14,123 @@ public class CPU {
 	}
 
 	public boolean isHalt() {
-		if (pause) {
-			return this.pause = true;
-		} else {
-			return this.pause = false;
-		}
+		return pause = true;
 	}
-
+	
+	public boolean runCPU() {
+		return pause = false;
+	}
+	
+	public boolean push(int number) {
+        if (o.push(number))
+            return true;
+        else
+            return false;
+    };
+	
 	public void erase() {
 		m.erase();
 		o.erase();
 	}
 
-	public int sumaPila() {
-		int resultado = 0;
-		int cont = 0;
-		int[] a = new int[2];
-		if (cont < 2 && o.getCima() != -1) {
-			a[cont] = o.pop();
-			cont++;
-		} else if (cont == 2) {
-			resultado = a[0] - a[1];
-			m.write(this.pos, resultado);
+	public boolean sumaPila() {
+		if(o.isEmpty() == false && o.getElemts() > 1) {
+			int num1 = o.pop();
+			int num2 = o.pop();
+			int resultado = num1 + num2;
+			return true;
 		}else {
-			resultado = -1;
+			return false;
 		}
-		return resultado;
 	}
 
-	public int restaPila() {
-		int resultado = 0;
-		int cont = 0;
-		int[] a = new int[2];
-		if (o.getCima() != -1 && cont < 2) {
-			a[cont] = o.pop();
-			cont++;
-		} else
-			return resultado = -1;
-		resultado = a[0] - a[1];
-		if (resultado != 1) {
-			m.write(this.pos, resultado);
-			this.pos++;
+	public boolean restaPila() {
+		if(o.isEmpty() == false && o.getElemts() > 1) {
+			int num1 = o.pop();
+			int num2 = o.pop();
+			int resultado = num1 - num2;
+			return true;
+		}else {
+			return false;
 		}
-		return resultado;
 	}
-
-	/*
-	 * public boolean execute(ByteCode bc) { if(bc.getBC() == ENUM_BYTECODE.ADD &&
-	 * this.sumaPila() != -1) return true; if(bc.getBC() == ENUM_BYTECODE.SUB &&
-	 * this.restaPila() != -1) return true; }
-	 */
-
+	
+	public boolean dividePila() {
+		if(o.isEmpty() == false && o.getElemts() > 1) {
+			int num1 = o.pop();
+			int num2 = o.pop();
+			int resultado = num1 / num2;
+			return true;
+		}else {
+			return false;
+		}
+	}
+	
+	public boolean multiplicaPila() {
+		if(o.isEmpty() == false && o.getElemts() > 1) {
+			int num1 = o.pop();
+			int num2 = o.pop();
+			int resultado = num1 * num2;
+			return true;
+		}else {
+			return false;
+		}
+	}
+	
+	public boolean store(int i) {
+		if (o.getCima() != -1) {
+			m.write(i, o.pop());
+			return true;
+		}else {
+			return false;
+		}
+	}
+	
+	public boolean load(int i) {
+		if (m.read(i) != -1) {
+			o.push(m.read(i));
+			return true;
+		}else {
+			return false;
+		}
+	}
+	
+	public boolean out() {
+		if(o.isEmpty() == false && o.getElemts() > 0) {
+			System.out.println("En la cima de la pila se encuentra: " + o.getCima());
+			return true;
+		}else {
+			return false;
+		}
+	}
+	
+	public boolean execute(ByteCode instruction) {
+        switch (instruction.getBC()) {
+        case ADD:
+            return sumaPila();
+        case SUB:
+            return restaPila();
+        case DIV:
+            return dividePila();
+        case MUL:
+            return multiplicaPila();
+        case PUSH:
+            return push(instruction.getParam());
+        case HALT:
+            return isHalt();
+        case LOAD:
+            return load(instruction.getParam());
+        case OUT:
+            return out();
+        case STORE:
+            return store(instruction.getParam());
+        default:
+            System.out.println("Fallo: instruccion incorrecta");
+            return false;
+        }
+    }
+	
+	public String toString() {
+		return "Memoria: " + m.toString() + "\nPila: " + o.toString();
+	}
 }
