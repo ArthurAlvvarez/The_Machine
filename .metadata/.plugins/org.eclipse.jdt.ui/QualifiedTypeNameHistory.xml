@@ -16,7 +16,7 @@
     <fullyQualifiedTypeName name="main.ENUM_COMMAND"/>
     <fullyQualifiedTypeName name="main.ByteCodeParser"/>
     <fullyQualifiedTypeName name="main.Command"/>
-    <fullyQualifiedTypeName name="java.lang.Integer"/>
     <fullyQualifiedTypeName name="main.CPU"/>
     <fullyQualifiedTypeName name="java.lang.String"/>
+    <fullyQualifiedTypeName name="java.lang.Integer"/>
 </qualifiedTypeNameHistroy>
