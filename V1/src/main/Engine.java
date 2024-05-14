@@ -29,11 +29,11 @@ public class Engine {
 	
 	public void reset() {
 		System.out.println("Reset completado");
-		this.c.erase();
+		this.bcp.reset();
 	}
 	
 	public void run() {
-		this.bcp.runProgram(c);
+		System.out.println(this.bcp.runProgram(c));
 	}
 	
 	public void newinst(ByteCode bc) {

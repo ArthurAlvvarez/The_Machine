@@ -2,11 +2,13 @@ package main;
 
 public class Memory {
 	private int Max_memory;
-	private int size = 5;
-	private Integer[] memory = new Integer[size];
+	private int size;
+	private Integer[] memory;
 	private boolean empty;
 	
 	public Memory() {
+		size = 5;
+		memory = new Integer[size];
 		this.empty = true;
 	}
 	
@@ -15,9 +17,14 @@ public class Memory {
 			this.empty = false;
 			Integer[] array2 = new Integer[pos*2];
 			for (int i = 0; i < this.memory.length; i++) {
-	            array2[i] = this.memory[i];
+				if(i < this.size) {
+					array2[i] = this.memory[i];
+				}else {
+					array2[i] = null;
+				}
 	        }
 			this.memory = array2;
+			this.size = array2.length;
 		}
 	}
 	
@@ -46,7 +53,7 @@ public class Memory {
 					if (this.memory[i] == null) {
 						
 					}else {
-						texto += this.memory[i] + " ";
+						texto += "[" + i + "]" + this.memory[i] + " ";
 					}
 				}
 				return texto;

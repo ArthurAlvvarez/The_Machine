@@ -4,22 +4,27 @@ import java.util.Iterator;
 
 public class ByteCodeProgram {
 	private int elemts;
-	private final int size = 1;
+	private int size;
 	private ByteCode[]program;
 	
 	public ByteCodeProgram() {
-		this.program = new ByteCode[size];
+		this.size = 1;
 		this.elemts = 0;
+		this.program = new ByteCode[size];
 	}
 	
 	private void resize() {
-		if (this.elemts >= this.size) {
-			ByteCode[] a = new ByteCode[size*2];
-			for(int i = 0; i < this.program.length; i++) {
-				a[i] = this.program[i];
-				this.program = a;
+		if(this.elemts == this.size) {
+			ByteCode a[] = new ByteCode[this.size * 2];
+			for(int i = 0; i < this.size; i++) {
+				if(i < this.size) {
+					a[i] = this.program[i];
+				}else {
+					a[i] = null;
+				}
 			}
-
+			this.program = a;
+			this.size = a.length;
 		}
 	}
 	
@@ -47,6 +52,12 @@ public class ByteCodeProgram {
 			return true;
 		}else
 			return false;
+	}
+	
+	public void reset() {
+		this.program = new ByteCode[size];
+		this.elemts = 0;
+		this.size = 1;
 	}
 	
 	public String runProgram(CPU cpu) {
