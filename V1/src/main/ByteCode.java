@@ -6,6 +6,7 @@ public class ByteCode {
 
 	public ByteCode(ENUM_BYTECODE bc) {
 		this.name = bc;
+		this.param = -1;
 	}
 	
 	public ByteCode(ENUM_BYTECODE bc, int i) {

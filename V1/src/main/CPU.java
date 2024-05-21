@@ -14,6 +14,10 @@ public class CPU {
 	}
 
 	public boolean isHalt() {
+		return pause;
+	}
+	
+	public boolean stopCPU() {
 		return pause = true;
 	}
 	
@@ -38,6 +42,7 @@ public class CPU {
 			int num1 = o.pop();
 			int num2 = o.pop();
 			int resultado = num1 + num2;
+			o.push(resultado);
 			return true;
 		}else {
 			return false;
@@ -49,6 +54,7 @@ public class CPU {
 			int num1 = o.pop();
 			int num2 = o.pop();
 			int resultado = num1 - num2;
+			o.push(resultado);
 			return true;
 		}else {
 			return false;
@@ -60,6 +66,7 @@ public class CPU {
 			int num1 = o.pop();
 			int num2 = o.pop();
 			int resultado = num1 / num2;
+			o.push(resultado);
 			return true;
 		}else {
 			return false;
@@ -71,6 +78,7 @@ public class CPU {
 			int num1 = o.pop();
 			int num2 = o.pop();
 			int resultado = num1 * num2;
+			o.push(resultado);
 			return true;
 		}else {
 			return false;
@@ -117,7 +125,7 @@ public class CPU {
         case PUSH:
             return push(instruction.getParam());
         case HALT:
-            return isHalt();
+            return stopCPU();
         case LOAD:
             return load(instruction.getParam());
         case OUT:
